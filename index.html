@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aaron Siebert</title>
+<meta name="description" content="Aaron Siebert is a composer and pianist working in film, modern classical, and ambient music.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head><body>
+<header><a class="name" href="index.html">Aaron Siebert</a>
+<nav><a href="index.html" class="on">Works</a><a href="about.html">About</a><a href="contact.html">Contact</a>
+<a href="https://www.instagram.com/eronsiebert" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6" fill="currentColor"/></svg></a></nav></header>
+<main>
+<section class="grid">
+<article class="card"><button class="thumb" data-video="https://www.youtube.com/embed/VmXLb_omKdQ" aria-label="Play: The Rest is Memory"><img src="https://i.ytimg.com/vi/VmXLb_omKdQ/hqdefault.jpg" alt="The Rest is Memory" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>The Rest is Memory</span><a href="https://payhip.com/b/KmM7Y">Score</a></div><div class="sub">Orchestra • Live Performance</div></article>
+<article class="card"><button class="thumb" data-video="https://www.youtube.com/embed/lmj0NZ4sHpU" aria-label="Play: Memorias dun Neno Labrego"><img src="https://i.ytimg.com/vi/lmj0NZ4sHpU/hqdefault.jpg" alt="Memorias dun Neno Labrego" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>Memorias dun Neno Labrego</span><a href="https://payhip.com/b/eUmyQ">Score</a></div><div class="sub">Orchestra • Live Performance</div></article>
+<article class="card"><button class="thumb" data-video="https://www.youtube.com/embed/rWgBEFAA0as" aria-label="Play: Mi Madre y La Tierra"><img src="img/mi-madre.jpg" alt="Mi Madre y La Tierra" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>Mi Madre y La Tierra</span></div><div class="sub">Film Score • Pure midi</div></article>
+<article class="card"><button class="thumb" data-video="https://www.youtube.com/embed/GKws6hF8Yq0" aria-label="Play: The Sobbing of The Phoenix"><img src="img/phoenix.jpg" alt="The Sobbing of The Phoenix" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>The Sobbing of The Phoenix</span><a href="https://payhip.com/b/GETXm">Score</a></div><div class="sub">Chamber Orchestra</div></article>
+<article class="card"><button class="thumb" data-video="https://player.vimeo.com/video/514063213?badge=0&autopause=0" aria-label="Play: Elas"><img src="img/elas.jpg" alt="Elas" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>Elas</span><a href="https://payhip.com/b/En1pl">Score</a></div><div class="sub">Film Score</div></article>
+<article class="card off"><button class="thumb" disabled aria-label="Coming soon"><img src="img/kintsugi.jpg" alt="Kintsugi" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>Kintsugi</span></div><div class="sub">Sax Quartet • Coming soon</div></article>
+<article class="card"><button class="thumb" data-video="https://www.youtube.com/embed/2Od0aXSgrkA" aria-label="Play: Lightkeeper"><img src="https://i.ytimg.com/vi/2Od0aXSgrkA/hqdefault.jpg" alt="Lightkeeper" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>Lightkeeper</span></div><div class="sub">Animation</div></article>
+<article class="card"><button class="thumb" data-video="https://www.youtube.com/embed/Xq5RKYKqcW0" aria-label="Play: Tom &amp; Boy"><img src="https://i.ytimg.com/vi/Xq5RKYKqcW0/hqdefault.jpg" alt="Tom &amp; Boy" loading="lazy"><span class="play"><i></i></span></button><div class="meta"><span>Tom &amp; Boy</span></div><div class="sub">Commercial</div></article>
+</section>
+<div id="modal" role="dialog" aria-label="Video"><div class="wrap"><button id="close" aria-label="Close">✕</button><iframe id="frame" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe></div></div>
+<script>
+const m=document.getElementById('modal'),f=document.getElementById('frame');
+function shut(){m.classList.remove('open');f.src='about:blank'}
+document.addEventListener('click',e=>{const b=e.target.closest('[data-video]');if(b){const u=b.dataset.video;f.src=u+(u.includes('?')?'&':'?')+'autoplay=1';m.classList.add('open');return}
+if(e.target===m||e.target.id==='close')shut()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')shut()});
+</script>
+</main>
+</body></html>
