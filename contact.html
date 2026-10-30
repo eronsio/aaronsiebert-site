@@ -13,14 +13,28 @@
 <p>To inquire about commissioning a new work, licensing a score, or collaborating, please send a note using the form below or email directly. All messages are read personally and treated confidentially.</p>
 <p>I welcome connections from fellow musicians, filmmakers, choreographers, and anyone interested in quiet, evocative sound. Whether you have a project in mind or simply wish to say hello, I look forward to hearing from you.</p>
 <p>No unsolicited promotional content, please. Your attention is appreciated, and responses may take some time depending on season and commitments.</p></div>
-<!-- FORM_ENDPOINT: replace with your Formspree / Web3Forms URL -->
-<form action="FORM_ENDPOINT" method="post">
+<form id="cf" action="https://formsubmit.co/aaronsiebertsio@gmail.com" method="post">
+<input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
+<input type="hidden" name="_captcha" value="false">
 <label>Name <small>(required)</small></label>
 <div class="row"><input name="first" placeholder="First Name" required><input name="last" placeholder="Last Name" required></div>
 <label>Email <small>(required)</small></label><input type="email" name="email" required>
 <div class="chk"><input type="checkbox" name="news" id="n"><label for="n" style="margin:0">Sign up for news and updates</label></div>
 <label>Subject <small>(required)</small></label><input name="subject" required>
 <label>Message <small>(required)</small></label><textarea name="message" required></textarea>
-<button type="submit">Submit</button></form></div>
+<button type="submit">Submit</button><p id="msg" role="status" style="font-size:15px;margin-top:14px"></p></form></div>
+<script>
+document.getElementById('cf').addEventListener('submit',async e=>{
+  e.preventDefault();const f=e.target,m=document.getElementById('msg'),b=f.querySelector('button');
+  b.disabled=true;m.textContent='Sending…';
+  try{
+    const r=await fetch('https://formsubmit.co/ajax/aaronsiebertsio@gmail.com',{method:'POST',headers:{Accept:'application/json'},body:new FormData(f)});
+    const j=await r.json();
+    if(r.ok&&String(j.success)==='true'){f.reset();m.textContent='Thank you — your message has been sent.'}
+    else throw 0;
+  }catch(_){m.textContent='Sorry, something went wrong. Please try again.'}
+  b.disabled=false;
+});
+</script>
 </main>
 </body></html>
