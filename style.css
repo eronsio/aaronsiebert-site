@@ -10,8 +10,8 @@ nav a.on{border-color:var(--fg)}
 nav svg{width:16px;height:16px;display:block}
 main{padding:0 4vw 60px;max-width:1500px;margin:0 auto}
 .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;padding-top:20px}
-.thumb{display:block;width:100%;aspect-ratio:16/9;border:0;padding:0;border-radius:18px;overflow:hidden;background:#121212;cursor:pointer;position:relative}
-.thumb img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+.thumb{display:block;width:100%;aspect-ratio:1;border:0;padding:0;border-radius:18px;overflow:hidden;background:#121212;cursor:pointer;position:relative}
+.thumb img{width:100%;height:100%;object-fit:contain;display:block;transition:transform .3s}
 .card:not(.off) .thumb:hover img{transform:scale(1.03)}
 .card.off .thumb{cursor:default}
 .card.off .thumb img{opacity:.55}
